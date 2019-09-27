@@ -1,0 +1,110 @@
+##数据库配置
+#商品模块
+product:
+  datasource:
+    url: jdbc:mysql://172.15.10.3:3306/mmyx_product?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    userName: mmyx_app
+    password: YEdFJqudsF6ueO
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  service:
+    protocal: http
+    host: localhost
+    port: 8090
+    application: /prod
+#订单模块
+order:
+  datasource:
+    url: jdbc:mysql://172.15.10.3:3306/mmyx_order?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    userName: mmyx_app
+    password: YEdFJqudsF6ueO
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  service:
+    protocal: https
+    host: amol.com.cn
+    port:
+    application: /stag-order
+#支付模块
+pay:
+  datasource:
+    url: jdbc:mysql://172.15.10.3:3306/mmyx_pay?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    userName: mmyx_app
+    password: YEdFJqudsF6ueO
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  service:
+    protocal: https
+    host: amol.com.cn
+    port:
+    application: /stag-pay
+#会员模块
+member:
+  datasource:
+    url: jdbc:mysql://172.15.10.3:3306/mmyx_member?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    userName: mmyx_app
+    password: YEdFJqudsF6ueO
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  service:
+    protocal: https
+    host: 127.0.0.1
+    port: 8093
+    application: /member
+#api模块
+api:
+  datasource:
+    url: jdbc:mysql://172.15.10.3:3306/mmyx_api?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    userName: mmqh_admin
+    password: Gkao%2002$1
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  service:
+    protocal: https
+    host: amol.com.cn
+    port:
+    application: /api
+###redis 配置
+spring:
+  redis:
+    host: 172.15.10.2
+    port: 6379
+    password: ihm12345
+
+kl:
+  server:
+    protocal: http
+    host: thirdpart.kaola.com
+    port:
+    application: api/
+    appKey: 7b4f6f46093c9812bff7745ec3bc0f70d49ad40f18ae3bba91f719f15c0571f7
+    appSecret : 2e1560eba0dad5733c77c0407993c8d55c72c0a03c080f358db9bfa9c2c86f40
+    channelId: 1396
+    channelName: mzkj
+
+mmyx:
+  service:
+    protocal: https
+    host: stag-meimei.ihangmei.com
+    port:
+    application: /mmyx
+
+jd:
+  service:
+    hostUrl: https://router.jd.com/api
+    oauthUrl: https://kploauth.jd.com/oauth/token
+    appKey: f5609722558d132f4ae501476dbfb7ae
+    appSecret: fe16862408c24f1982eace5af55f0c67
+    userName: yhyg2019
+    passWord: jd123456
+
+#需要走特殊流程的企业 - 如提交订单（查询资金管理接口）、支付订单（需要增加企业字段）、退货退款（需要执行企业管理-退款、支付模块）等操作
+#10003-果果医生
+special:
+  process:
+    companyId: 10003,1
+
+# 图片服务器
+minio:
+  endpoint: http://172.35.1.2:9000
+  viewpoint: http://120.92.102.231/
+  accessKey: Y254T3WE0X0ZE96GW1BC
+  secretKey: 89Axuk31xZ457a1ZXM3XkQC03bZkpNfqPc4pGyLU
+#配置短信发送服务
+SMS:
+  SERVER: http://120.92.33.169:8080/hangmei/send
