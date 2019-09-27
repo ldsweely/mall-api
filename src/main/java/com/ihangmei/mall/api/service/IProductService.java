@@ -13,19 +13,19 @@ public interface IProductService {
     /**
      * 同步分类接口
      */
-    Result queryCateList(String url, String params) throws Exception;
+    Result queryCateList(String params) ;
 
     /**
      * 分页查询全量商品sku接口
      */
-    Result queryAllSkuPage(String url,String ent_id, String params);
+    Result queryAllSkuPage(String ent_id, String params);
     /**
      * 根据sku批量查询商品详情
      */
-    Result queryBatchQuerySku(String url,String ent_id, String params);
+    Result queryBatchQuerySku(String ent_id, String params);
     /**
      * 查询同类商品
      */
-    Result querySkuSimilar(String url,String ent_id, String params);
+    Result querySkuSimilar(String ent_id, String params);
 
 }

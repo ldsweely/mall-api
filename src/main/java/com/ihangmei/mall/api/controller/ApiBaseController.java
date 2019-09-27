@@ -96,6 +96,13 @@ public class ApiBaseController extends BaseController {
         if (!sign.equals(generateSignature(appkey, app_sec, params, timestamp.toString()))) {
             return GatApiConstants.HM_SYS_SIGN_ERROR.toResult("签名无效！sign=" + sign);
         }
+        long ct = System.currentTimeMillis()/1000;
+        long ct_c = timestamp - ct;
+        if(ct_c < -1000 * 20 || ct_c > 1000 * 20) //20分钟外的误差算非法请求
+        {
+            return GatApiConstants.HM_SYS_NOT_TIME_ERROR.toResult("超时请求，检查时间戳");
+        }
+
         return returnSucess(ent_id);
     }
 
