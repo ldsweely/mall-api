@@ -1,7 +1,6 @@
 package com.ihangmei.mall.api.config;
 
 import com.ihangmei.mall.common.constant.CommonConstants;
-
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
@@ -24,8 +23,6 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import javax.sql.DataSource;
-
 @Configuration
 @MapperScan(basePackages = "com.ihangmei.mall.api.dao", sqlSessionFactoryRef = "apiSqlSessionFactory")
 public class MybatisConfig {
@@ -34,7 +31,7 @@ public class MybatisConfig {
     private static final String AOP_POINTCUT_EXPRESSION = "execution(* com.ihangmei.mall.api.service..*.*(..))";
 
     @Bean(name = "apiSqlSessionFactory")
-    public SqlSessionFactory clusterSqlSessionFactory(@Qualifier("apiDataSource") DataSource apiDataSource,@Qualifier("ibatisConfiguration") org.apache.ibatis.session.Configuration configuration)
+    public SqlSessionFactory clusterSqlSessionFactory(@Qualifier("apiDataSource") DataSource apiDataSource,@Qualifier("iMybatisConfiguration") org.apache.ibatis.session.Configuration configuration)
             throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(apiDataSource);
@@ -73,12 +70,4 @@ public class MybatisConfig {
         TransactionInterceptor txAdvice = new TransactionInterceptor(m, source);
         return txAdvice;
     }
-
-    // 切面的定义,pointcut及advice
-//    @Bean
-//    public Advisor txAdviceAdvisor(@Qualifier("txAdvice") TransactionInterceptor txAdvice) {
-//        AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
-//        pointcut.setExpression(AOP_POINTCUT_EXPRESSION);
-//        return new DefaultPointcutAdvisor(pointcut, txAdvice);
-//    }
 }

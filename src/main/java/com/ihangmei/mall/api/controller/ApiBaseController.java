@@ -4,16 +4,14 @@ import com.google.common.base.Strings;
 import com.ihangmei.mall.api.constants.ApiConstants;
 import com.ihangmei.mall.api.entity.EnterPriseEntity;
 import com.ihangmei.mall.api.service.impl.EnterPriseServiceImpl;
+import com.ihangmei.mall.api.util.RedisUtil;
 import com.ihangmei.mall.common.controller.BaseController;
 import com.ihangmei.mall.common.util.DecryptMD5;
-import com.ihangmei.mall.common.util.RedisUtil;
 import com.ihangmei.mall.common.web.Result;
 import com.ihangmei.mall.common.constant.GatApiConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-
 
 /**
  * 注释：API模块基础controller

@@ -1,13 +1,6 @@
 package com.ihangmei.mall.api.service;
 
-import com.alibaba.fastjson.JSON;
-import com.google.common.base.Strings;
-import com.google.common.collect.Maps;
-import com.ihangmei.mall.common.util.http.OkHttpUtil;
 import com.ihangmei.mall.common.web.Result;
-
-import java.util.List;
-import java.util.Map;
 
 public interface IProductService {
     /**
