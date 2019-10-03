@@ -12,6 +12,23 @@ api:
     port:
     application: /stag-api
 
+#产品接口URL
+sku:
+  server:
+    hostUrl: https://extintshhm.tcvideo.com.cn
+#地域接口URL
+addr:
+  server:
+    hostUrl: https://extintshhm.tcvideo.com.cn
+#订单接口URL
+order:
+  server:
+    hostUrl: https://extintshhm.tcvideo.com.cn
+#售后接口URL
+aftersale:
+  server:
+    hostUrl: https://extintshhm.tcvideo.com.cn
+
 ###redis 配置
 spring:
   redis:
