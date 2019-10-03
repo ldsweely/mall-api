@@ -14,7 +14,7 @@ public interface IAfterSaleService {
     /**
      * 申请售后接口
      */
-    Result apply(String ent_id,String app_key,String params) ;
+    Result afterSaleApply(String ent_id,String app_key,String params) ;
     /**
      * 查询售后列表接口
      */

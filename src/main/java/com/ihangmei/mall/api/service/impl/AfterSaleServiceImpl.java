@@ -59,7 +59,7 @@ public class AfterSaleServiceImpl implements IAfterSaleService {
      * 申请售后接口
      */
     @Override
-    public Result apply(String ent_id, String app_key, String params) {
+    public Result afterSaleApply(String ent_id, String app_key, String params) {
         Result result = null;
         JSONObject param = JSONObject.parseObject(params);
         param.put("appKey",app_key);
