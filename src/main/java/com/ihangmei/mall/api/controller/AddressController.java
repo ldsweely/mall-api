@@ -30,7 +30,7 @@ public class AddressController extends ApiBaseController {
     @RequestMapping(value = "/query/prov/list", method = RequestMethod.POST)
     public Result queryProvinceList(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -52,7 +52,7 @@ public class AddressController extends ApiBaseController {
     @RequestMapping(value = "/query/city/list", method = RequestMethod.POST)
     public Result queryAllSkuPage(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
        /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -73,7 +73,7 @@ public class AddressController extends ApiBaseController {
     @RequestMapping(value = "/query/county/list", method = RequestMethod.POST)
     public Result queryBatchQuerySku(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -94,7 +94,7 @@ public class AddressController extends ApiBaseController {
     @RequestMapping(value = "/query/town/list", method = RequestMethod.POST)
     public Result querySkuSimilar(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -115,7 +115,7 @@ public class AddressController extends ApiBaseController {
     @RequestMapping(value = "/check/addr", method = RequestMethod.POST)
     public Result checkAddress(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }

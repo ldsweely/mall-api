@@ -30,7 +30,7 @@ public class AfterSaleController extends ApiBaseController {
     @RequestMapping(value = "/query/stock", method = RequestMethod.POST)
     public Result queryStock(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -52,7 +52,7 @@ public class AfterSaleController extends ApiBaseController {
     @RequestMapping(value = "/query/is/can", method = RequestMethod.POST)
     public Result queryIsCan(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
        /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -73,7 +73,7 @@ public class AfterSaleController extends ApiBaseController {
     @RequestMapping(value = "/apply", method = RequestMethod.POST)
     public Result afterSaleApply(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -94,7 +94,7 @@ public class AfterSaleController extends ApiBaseController {
     @RequestMapping(value = "/query/list", method = RequestMethod.POST)
     public Result queryList(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -115,7 +115,7 @@ public class AfterSaleController extends ApiBaseController {
     @RequestMapping(value = "/query/detail", method = RequestMethod.POST)
     public Result queryDetail(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -136,7 +136,7 @@ public class AfterSaleController extends ApiBaseController {
     @RequestMapping(value = "/cancel", method = RequestMethod.POST)
     public Result afterSaleCancel(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -157,7 +157,7 @@ public class AfterSaleController extends ApiBaseController {
     @RequestMapping(value = "/query/track", method = RequestMethod.POST)
     public Result queryTrack(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -178,7 +178,7 @@ public class AfterSaleController extends ApiBaseController {
     @RequestMapping(value = "/send/sku", method = RequestMethod.POST)
     public Result sendSku(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }

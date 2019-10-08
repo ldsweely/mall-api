@@ -49,7 +49,7 @@ public class IndexController extends ApiBaseController {
         reqParamVO.setAppkey(appKey);
         reqParamVO.setParams(params);
         reqParamVO.setTimestamp(timeStamp);
-        reqParamVO.setSign(sign);
+        reqParamVO.setSignature(sign);
         Result result = null;
 
         if (testId.equals("1")){

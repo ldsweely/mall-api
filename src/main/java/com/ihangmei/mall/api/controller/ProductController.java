@@ -26,7 +26,7 @@ public class ProductController extends ApiBaseController {
     @RequestMapping(value = "/query/cate/list", method = RequestMethod.POST)
     public Result queryCateList(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -47,7 +47,7 @@ public class ProductController extends ApiBaseController {
     @RequestMapping(value = "/query/sku/page", method = RequestMethod.POST)
     public Result queryAllSkuPage(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
        /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -68,7 +68,7 @@ public class ProductController extends ApiBaseController {
     @RequestMapping(value = "/query/sku/batch", method = RequestMethod.POST)
     public Result queryBatchQuerySku(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }
@@ -89,7 +89,7 @@ public class ProductController extends ApiBaseController {
     @RequestMapping(value = "/query/sku/similar", method = RequestMethod.POST)
     public Result querySkuSimilar(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
-        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSign(), reqParamVO.getParams(), reqParamVO.getTimestamp());
+        Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {
             return result;
         }

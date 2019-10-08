@@ -2,6 +2,7 @@ package com.ihangmei.mall.api.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.base.Strings;
 import com.ihangmei.mall.api.config.SkuConfig;
 import com.ihangmei.mall.api.constants.ApiConstants;
 import com.ihangmei.mall.api.service.IProductService;
@@ -22,11 +23,34 @@ public class ProductServiceImpl implements IProductService {
      */
     public Result queryCateList(String params)  {
         Result result = null;
+        JSONObject param = JSONObject.parseObject(params);
+
         String url = skuConfig.getHostUrl() + ApiConstants.PROD_QUERY_CATE_LIST;
+        String strResult = null;
         try {
-            result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
+            strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
+        }
+
+        if(Strings.isNullOrEmpty(strResult)) {
+            return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("空数据");
+        }
+
+        try {
+            JSONObject resultObj = JSONObject.parseObject(strResult);
+            if(0 != resultObj.getInteger("error")) {
+                return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("下级商品数据异常");
+            }
+
+            Object objData = resultObj.get("data");
+            String strMsg = resultObj.getString("msg");
+            Integer intError = resultObj.getInteger("error");
+            result = Result.builder().error(intError).msg(strMsg).data(objData).build();
+
+        } catch (Exception e) {
+            log.error("返回对象异常,对象信息={},异常信息={}",strResult,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
@@ -44,14 +68,36 @@ public class ProductServiceImpl implements IProductService {
 
         String url = skuConfig.getHostUrl() + ApiConstants.PROD_QUERY_ALL_SKU_PAGE;
 
+        String strResult = null;
         try {
-            result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,param)), Result.class);
+            strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
+        if(Strings.isNullOrEmpty(strResult)) {
+            return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("空数据");
+        }
+
+        try {
+            JSONObject resultObj = JSONObject.parseObject(strResult);
+            if(0 != resultObj.getInteger("error")) {
+                return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("下级商品数据异常");
+            }
+
+            Object objData = resultObj.get("data");
+            String strMsg = resultObj.getString("msg");
+            Integer intError = resultObj.getInteger("error");
+            result = Result.builder().error(intError).msg(strMsg).data(objData).build();
+
+        } catch (Exception e) {
+            log.error("返回对象异常,对象信息={},异常信息={}",strResult,e.getMessage());
+            return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
+        }
+
         return result;
+
     }
     /**
      * 根据sku批量查询商品详情
@@ -64,14 +110,36 @@ public class ProductServiceImpl implements IProductService {
 
         String url = skuConfig.getHostUrl() + ApiConstants.PROD_QUERY_BATCH_LIST_SKU;
 
+        String strResult = null;
         try {
-            result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,param)), Result.class);
+            strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
+        if(Strings.isNullOrEmpty(strResult)) {
+            return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("空数据");
+        }
+
+        try {
+            JSONObject resultObj = JSONObject.parseObject(strResult);
+            if(0 != resultObj.getInteger("error")) {
+                return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("下级商品数据异常");
+            }
+
+            Object objData = resultObj.get("data");
+            String strMsg = resultObj.getString("msg");
+            Integer intError = resultObj.getInteger("error");
+            result = Result.builder().error(intError).msg(strMsg).data(objData).build();
+
+        } catch (Exception e) {
+            log.error("返回对象异常,对象信息={},异常信息={}",strResult,e.getMessage());
+            return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
+        }
+
         return result;
+
     }
     /**
      * 查询同类商品
@@ -84,13 +152,35 @@ public class ProductServiceImpl implements IProductService {
 
         String url = skuConfig.getHostUrl() + ApiConstants.PROD_QUERY_SKU_SIMILAR;
 
+        String strResult = null;
         try {
-            result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,param)), Result.class);
+            strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
+        if(Strings.isNullOrEmpty(strResult)) {
+            return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("空数据");
+        }
+
+        try {
+            JSONObject resultObj = JSONObject.parseObject(strResult);
+            if(0 != resultObj.getInteger("error")) {
+                return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("下级商品数据异常");
+            }
+
+            Object objData = resultObj.get("data");
+            String strMsg = resultObj.getString("msg");
+            Integer intError = resultObj.getInteger("error");
+            result = Result.builder().error(intError).msg(strMsg).data(objData).build();
+
+        } catch (Exception e) {
+            log.error("返回对象异常,对象信息={},异常信息={}",strResult,e.getMessage());
+            return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
+        }
+
         return result;
+
     }
 }
