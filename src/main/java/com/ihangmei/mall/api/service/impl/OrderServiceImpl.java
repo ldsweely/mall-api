@@ -9,12 +9,14 @@ import com.ihangmei.mall.common.constant.GatApiConstants;
 import com.ihangmei.mall.common.util.http.OkHttpUtil;
 import com.ihangmei.mall.common.web.Result;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("orderService")
 @Slf4j
 public class OrderServiceImpl implements IOrderService {
-    private OrderConfig orderConfi;
+    @Autowired
+    private OrderConfig orderConfig;
     /**
      * 查询商品库存接口
      */
@@ -24,7 +26,7 @@ public class OrderServiceImpl implements IOrderService {
         param.put("appKey",app_key);
         param.put("companyId", ent_id);
 
-        String url = orderConfi.getHostUrl() + ApiConstants.ORDER_STOCK;
+        String url = orderConfig.getHostUrl() + ApiConstants.ORDER_STOCK;
         try {
             result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
         }
@@ -44,7 +46,7 @@ public class OrderServiceImpl implements IOrderService {
         param.put("appKey",app_key);
         param.put("companyId", ent_id);
 
-        String url = orderConfi.getHostUrl() + ApiConstants.ORDER_FREIGHT;
+        String url = orderConfig.getHostUrl() + ApiConstants.ORDER_FREIGHT;
         try {
             result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
         }
@@ -63,7 +65,7 @@ public class OrderServiceImpl implements IOrderService {
         param.put("appKey",app_key);
         param.put("companyId", ent_id);
 
-        String url = orderConfi.getHostUrl() + ApiConstants.ORDER_SUBMIT;
+        String url = orderConfig.getHostUrl() + ApiConstants.ORDER_SUBMIT;
         try {
             result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
         }
@@ -82,7 +84,7 @@ public class OrderServiceImpl implements IOrderService {
         param.put("appKey",app_key);
         param.put("companyId", ent_id);
 
-        String url = orderConfi.getHostUrl() + ApiConstants.ORDER_PAY;
+        String url = orderConfig.getHostUrl() + ApiConstants.ORDER_PAY;
         try {
             result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
         }
@@ -101,7 +103,7 @@ public class OrderServiceImpl implements IOrderService {
         param.put("appKey",app_key);
         param.put("companyId", ent_id);
 
-        String url = orderConfi.getHostUrl() + ApiConstants.ORDER_DETAIL;
+        String url = orderConfig.getHostUrl() + ApiConstants.ORDER_DETAIL;
         try {
             result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
         }
@@ -120,7 +122,7 @@ public class OrderServiceImpl implements IOrderService {
         param.put("appKey",app_key);
         param.put("companyId", ent_id);
 
-        String url = orderConfi.getHostUrl() + ApiConstants.ORDER_REFUND;
+        String url = orderConfig.getHostUrl() + ApiConstants.ORDER_REFUND;
         try {
             result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
         }
@@ -139,7 +141,7 @@ public class OrderServiceImpl implements IOrderService {
         param.put("appKey",app_key);
         param.put("companyId", ent_id);
 
-        String url = orderConfi.getHostUrl() + ApiConstants.ORDER_TRACK;
+        String url = orderConfig.getHostUrl() + ApiConstants.ORDER_TRACK;
         try {
             result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
         }

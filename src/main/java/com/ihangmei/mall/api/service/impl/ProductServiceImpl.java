@@ -9,11 +9,13 @@ import com.ihangmei.mall.common.constant.GatApiConstants;
 import com.ihangmei.mall.common.util.http.OkHttpUtil;
 import com.ihangmei.mall.common.web.Result;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("productService")
 @Slf4j
 public class ProductServiceImpl implements IProductService {
+    @Autowired
     private SkuConfig skuConfig;
     /**
      * 同步分类接口

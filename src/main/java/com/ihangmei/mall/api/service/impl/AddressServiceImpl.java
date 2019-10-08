@@ -9,11 +9,13 @@ import com.ihangmei.mall.common.constant.GatApiConstants;
 import com.ihangmei.mall.common.util.http.OkHttpUtil;
 import com.ihangmei.mall.common.web.Result;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service("addressService")
 @Slf4j
 public class AddressServiceImpl implements IAddressService {
+    @Autowired
     private AddrConfig addrConfig;
     /**
      * 查询一级地域（省份）接口

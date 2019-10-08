@@ -8,14 +8,14 @@ api:
     driver-class-name: com.mysql.cj.jdbc.Driver
   service:
     protocal: https
-    host: amol.com.cn
+    host: 127.0.0.1
     port:
-    application: /stag-api
+    application: /api
 
 #产品接口URL
 sku:
   server:
-    hostUrl: https://extintshhm.tcvideo.com.cn
+    hostUrl: https://amol.com.cn/stag-product/prod/
 #地域接口URL
 addr:
   server:

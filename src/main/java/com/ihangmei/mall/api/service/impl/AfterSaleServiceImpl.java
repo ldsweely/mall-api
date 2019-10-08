@@ -9,11 +9,13 @@ import com.ihangmei.mall.common.constant.GatApiConstants;
 import com.ihangmei.mall.common.util.http.OkHttpUtil;
 import com.ihangmei.mall.common.web.Result;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("orderService")
+@Service("afterSaleService")
 @Slf4j
 public class AfterSaleServiceImpl implements IAfterSaleService {
+    @Autowired
     private AfterSaleConfig afterSaleConfig;
     /**
      * 查询商品支持的售后类型接口
