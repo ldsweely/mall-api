@@ -2,6 +2,7 @@ package com.ihangmei.mall.api.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.base.Strings;
 import com.ihangmei.mall.api.config.AddrConfig;
 import com.ihangmei.mall.api.constants.ApiConstants;
 import com.ihangmei.mall.api.service.IAddressService;
@@ -27,14 +28,36 @@ public class AddressServiceImpl implements IAddressService {
         param.put("companyId", ent_id);
 
         String url = addrConfig.getHostUrl() + ApiConstants.ADDR_PROVINCE_LIST;
+        String strResult = null;
         try {
-            result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
+            strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
+        if(Strings.isNullOrEmpty(strResult)) {
+            return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("空数据");
+        }
+
+        try {
+            JSONObject resultObj = JSONObject.parseObject(strResult);
+            if(0 != resultObj.getInteger("error")) {
+                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
+            }
+
+            Object objData = resultObj.get("data");
+            String strMsg = resultObj.getString("msg");
+            Integer intError = resultObj.getInteger("error");
+            result = Result.builder().error(intError).msg(strMsg).data(objData).build();
+
+        } catch (Exception e) {
+            log.error("返回对象异常,对象信息={},异常信息={}",strResult,e.getMessage());
+            return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
+        }
+
         return result;
+
     }
 
     /**
@@ -47,10 +70,31 @@ public class AddressServiceImpl implements IAddressService {
         param.put("companyId", ent_id);
 
         String url = addrConfig.getHostUrl() + ApiConstants.ADDR_CITY_LIST;
+        String strResult = null;
         try {
-            result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
+            strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
+        }
+
+        if(Strings.isNullOrEmpty(strResult)) {
+            return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("空数据");
+        }
+
+        try {
+            JSONObject resultObj = JSONObject.parseObject(strResult);
+            if(0 != resultObj.getInteger("error")) {
+                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
+            }
+
+            Object objData = resultObj.get("data");
+            String strMsg = resultObj.getString("msg");
+            Integer intError = resultObj.getInteger("error");
+            result = Result.builder().error(intError).msg(strMsg).data(objData).build();
+
+        } catch (Exception e) {
+            log.error("返回对象异常,对象信息={},异常信息={}",strResult,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
@@ -66,10 +110,31 @@ public class AddressServiceImpl implements IAddressService {
         param.put("companyId", ent_id);
 
         String url = addrConfig.getHostUrl() + ApiConstants.ADDR_COUNTY_LIST;
+        String strResult = null;
         try {
-            result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
+            strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
+        }
+
+        if(Strings.isNullOrEmpty(strResult)) {
+            return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("空数据");
+        }
+
+        try {
+            JSONObject resultObj = JSONObject.parseObject(strResult);
+            if(0 != resultObj.getInteger("error")) {
+                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
+            }
+
+            Object objData = resultObj.get("data");
+            String strMsg = resultObj.getString("msg");
+            Integer intError = resultObj.getInteger("error");
+            result = Result.builder().error(intError).msg(strMsg).data(objData).build();
+
+        } catch (Exception e) {
+            log.error("返回对象异常,对象信息={},异常信息={}",strResult,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
@@ -85,10 +150,31 @@ public class AddressServiceImpl implements IAddressService {
         param.put("companyId", ent_id);
 
         String url = addrConfig.getHostUrl() + ApiConstants.ADDR_TOWN_LIST;
+        String strResult = null;
         try {
-            result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
+            strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
+        }
+
+        if(Strings.isNullOrEmpty(strResult)) {
+            return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("空数据");
+        }
+
+        try {
+            JSONObject resultObj = JSONObject.parseObject(strResult);
+            if(0 != resultObj.getInteger("error")) {
+                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
+            }
+
+            Object objData = resultObj.get("data");
+            String strMsg = resultObj.getString("msg");
+            Integer intError = resultObj.getInteger("error");
+            result = Result.builder().error(intError).msg(strMsg).data(objData).build();
+
+        } catch (Exception e) {
+            log.error("返回对象异常,对象信息={},异常信息={}",strResult,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
@@ -104,10 +190,31 @@ public class AddressServiceImpl implements IAddressService {
         param.put("companyId", ent_id);
 
         String url = addrConfig.getHostUrl() + ApiConstants.ADDR_CHECK;
+        String strResult = null;
         try {
-            result = JSON.parseObject(JSON.toJSONString(OkHttpUtil.postJson(url,params)), Result.class);
+            strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
+        }
+
+        if(Strings.isNullOrEmpty(strResult)) {
+            return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("空数据");
+        }
+
+        try {
+            JSONObject resultObj = JSONObject.parseObject(strResult);
+            if(0 != resultObj.getInteger("error")) {
+                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
+            }
+
+            Object objData = resultObj.get("data");
+            String strMsg = resultObj.getString("msg");
+            Integer intError = resultObj.getInteger("error");
+            result = Result.builder().error(intError).msg(strMsg).data(objData).build();
+
+        } catch (Exception e) {
+            log.error("返回对象异常,对象信息={},异常信息={}",strResult,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
