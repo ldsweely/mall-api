@@ -3,7 +3,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ihangmei.mall.api.dao.EnterPriseDao">
     <select id="selectByAppKey" parameterType="String" resultType="com.ihangmei.mall.api.entity.EnterPriseEntity">
-        select ent_id,ent_name,app_key,app_secret  from  EnterPrise where app_key = #{app_key}
+        select ent_id as entId,ent_name as entName,app_key as appKey,app_secret as appSecret from enterprise where app_key = #{app_key}
+    </select>
+
+    <select id="getEntIdByAppKey" parameterType="String" resultType="java.lang.Integer">
+        select ent_id from enterprise where app_key = #{app_key}
+    </select>
+
+    <select id="getAppSecretByAppKey" parameterType="String" resultType="java.lang.String">
+        select app_secret from enterprise where app_key = #{app_key}
     </select>
 
 </mapper>

@@ -39,7 +39,7 @@ public class ApiBaseController extends BaseController {
 
         String key = builder.append(ApiConstants.ORDER_PAY_LOCK_PREFIX ).append(":").append(appKey).toString();
         try {
-            object = redisUtil.get(key);
+             object = redisUtil.get(key);
         } catch (Exception e) {
             e.printStackTrace();
             return "99";
@@ -50,10 +50,17 @@ public class ApiBaseController extends BaseController {
         }
         EnterPriseEntity enterPriseEntity = enterPriseService.selectByAppKey(appKey);
         if(enterPriseEntity!=null){
-            String v = new StringBuilder().append(enterPriseEntity.getEnt_id()).append(":").append(enterPriseEntity.getApp_secret()).toString();
+            String v = new StringBuilder().append(enterPriseEntity.getEntId()).append(":").append(enterPriseEntity.getAppSecret()).toString();
             redisUtil.set(key,v,1800);
             return v;
         }
+//        Integer intEntId = enterPriseService.getEntIdByAppKey(appKey);
+//        String strAppSecret = enterPriseService.getAppSecretByAppKey(appKey);
+//        if(intEntId!=null && strAppSecret!=null){
+//            String v = new StringBuilder().append(intEntId).append(":").append(strAppSecret).toString();
+//            redisUtil.set(key,v,1800);
+//            return v;
+//        }
         return "2";  //无效APP_Key
     }
     /**
@@ -96,7 +103,7 @@ public class ApiBaseController extends BaseController {
         }
         long ct = System.currentTimeMillis()/1000;
         long ct_c = timestamp - ct;
-        if(ct_c < -1000 * 20 || ct_c > 1000 * 20) //20分钟外的误差算非法请求
+        if(ct_c < -60 * 20 || ct_c > 60 * 20) //20分钟外的误差算非法请求
         {
             return GatApiConstants.HM_SYS_NOT_TIME_ERROR.toResult("超时请求，检查时间戳");
         }

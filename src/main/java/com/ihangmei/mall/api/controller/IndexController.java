@@ -62,4 +62,29 @@ public class IndexController extends ApiBaseController {
         return result;
 
     }
+
+    @RequestMapping(value = "/getkey", method = RequestMethod.POST)
+    public String queryGetKey(HttpServletRequest request,  @RequestParam("params") String params) {
+        /* 默认公司appkey 0f885924309540105db61266b21d7cbc
+                  appsec deab698325704321603fefdfc6b4cfc3
+       */
+        String appKey = "0f885924309540105db61266b21d7cbc";
+        String appSec = "deab698325704321603fefdfc6b4cfc3";
+        long timeStamp = System.currentTimeMillis()/1000;
+
+        String sign = generateSignature(appKey,appSec,params,String.valueOf(timeStamp));
+        ReqParamVO reqParamVO =new ReqParamVO();
+        reqParamVO.setAppkey(appKey);
+        reqParamVO.setParams(params);
+        reqParamVO.setTimestamp(timeStamp);
+        reqParamVO.setSignature(sign);
+
+        String strResult = reqParamVO.toString();
+        return strResult;
+
+        //{"appkey":"0f885924309540105db61266b21d7cbc","timestamp":"1570522339","signature":"2cdb47e43c8f6c704a0f754c00b04d7c","params":"{{\"pageNum\":1,\"pageSize\":10}}"}
+
+
+    }
+
 }

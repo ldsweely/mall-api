@@ -16,4 +16,12 @@ public class EnterPriseServiceImpl implements IEnterPriseService {
     public EnterPriseEntity selectByAppKey(String app_key){
         return enterPriseDao.selectByAppKey(app_key);
     }
+    @Override
+    public Integer getEntIdByAppKey(String app_key){
+        return enterPriseDao.getEntIdByAppKey(app_key);
+    }
+    @Override
+    public String getAppSecretByAppKey(String app_key){
+        return enterPriseDao.getAppSecretByAppKey(app_key);
+    }
 }

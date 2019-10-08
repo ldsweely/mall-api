@@ -2,8 +2,9 @@
 #api模块
 api:
   datasource:
-    url: jdbc:mysql://120.92.45.50:3306/mmyx_api?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
-    userName: mmqh_admin
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://120.92.45.50:3306/mmyx?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    userName: mmyx_admin
     password: Gkao%2002$1
     driver-class-name: com.mysql.cj.jdbc.Driver
   service:
