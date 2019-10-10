@@ -27,8 +27,8 @@ public class AfterSaleController extends ApiBaseController {
      * @param reqParamVO
      * @return
      */
-    @RequestMapping(value = "/query/stock", method = RequestMethod.POST)
-    public Result queryStock(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
+    @RequestMapping(value = "/query/service", method = RequestMethod.POST)
+    public Result queryService(HttpServletRequest request, @RequestBody ReqParamVO reqParamVO) {
         /*1 请求有效性校验*/
         Result result = validApiRequest(reqParamVO.getAppkey(), reqParamVO.getSignature(), reqParamVO.getParams(), reqParamVO.getTimestamp());
         if (result.getError() != 0) {

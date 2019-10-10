@@ -42,9 +42,6 @@ public class OrderServiceImpl implements IOrderService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");
@@ -83,9 +80,6 @@ public class OrderServiceImpl implements IOrderService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");
@@ -123,9 +117,6 @@ public class OrderServiceImpl implements IOrderService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");
@@ -163,9 +154,6 @@ public class OrderServiceImpl implements IOrderService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");
@@ -203,9 +191,6 @@ public class OrderServiceImpl implements IOrderService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");
@@ -243,9 +228,6 @@ public class OrderServiceImpl implements IOrderService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");
@@ -283,9 +265,6 @@ public class OrderServiceImpl implements IOrderService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_ORDER_ERROR.toResult("下级数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");

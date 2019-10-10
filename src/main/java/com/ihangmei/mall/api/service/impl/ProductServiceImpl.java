@@ -40,9 +40,6 @@ public class ProductServiceImpl implements IProductService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("下级商品数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");
@@ -82,9 +79,6 @@ public class ProductServiceImpl implements IProductService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("下级商品数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");
@@ -124,9 +118,6 @@ public class ProductServiceImpl implements IProductService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("下级商品数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");
@@ -166,9 +157,6 @@ public class ProductServiceImpl implements IProductService {
 
         try {
             JSONObject resultObj = JSONObject.parseObject(strResult);
-            if(0 != resultObj.getInteger("error")) {
-                return GatApiConstants.HM_BUSI_SKU_ERROR.toResult("下级商品数据异常");
-            }
 
             Object objData = resultObj.get("data");
             String strMsg = resultObj.getString("msg");

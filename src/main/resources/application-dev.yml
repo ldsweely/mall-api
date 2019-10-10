@@ -20,15 +20,15 @@ sku:
 #地域接口URL
 addr:
   server:
-    hostUrl: https://extintshhm.tcvideo.com.cn
+    hostUrl: https://amol.com.cn/stag-order
 #订单接口URL
 order:
   server:
-    hostUrl: https://extintshhm.tcvideo.com.cn
+    hostUrl: https://amol.com.cn/stag-order
 #售后接口URL
 aftersale:
   server:
-    hostUrl: https://extintshhm.tcvideo.com.cn
+    hostUrl: https://amol.com.cn/stag-order
 
 ###redis 配置
 spring:
