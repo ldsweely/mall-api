@@ -3,39 +3,39 @@
 api:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://120.92.45.50:3306/mmyx?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://172.35.30.17:3306/mmyx?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     userName: mmyx_admin
     password: Gkao%2002$1
     driver-class-name: com.mysql.cj.jdbc.Driver
   service:
     protocal: https
-    host: 127.0.0.1
+    host: api.meimei.com
     port:
     application: /api
 
 #产品接口URL
 sku:
   server:
-    hostUrl: https://amol.com.cn/stag-product/prod
+    hostUrl: https://amol.com.cn/product/prod
 #地域接口URL
 addr:
   server:
-    hostUrl: https://amol.com.cn/stag-order
+    hostUrl: https://amol.com.cn/order
 #订单接口URL
 order:
   server:
-    hostUrl: https://amol.com.cn/stag-order
+    hostUrl: https://amol.com.cn/order
 #售后接口URL
 aftersale:
   server:
-    hostUrl: https://amol.com.cn/stag-order
+    hostUrl: https://amol.com.cn/order
 
 ###redis 配置
 spring:
   redis:
-    host: 120.92.76.53
+    host: 172.35.30.6
     port: 6379
-    password: ihm12345
+    password: 1A-_EL@yBOss?w8r!MBBc
 
 #配置短信发送服务
 SMS:
