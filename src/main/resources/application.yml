@@ -1,6 +1,6 @@
 spring:
   profiles:
-    active: prod
+    active: dev
   mail:
     default-encoding: UTF-8
     host: mail1.icoremail.net
@@ -13,8 +13,8 @@ spring:
 
 ##定义Logger日志信息
 logback:
-  logdir: /opt/logs/api
-  #  logdir: c:/logs/
+  #logdir: /opt/logs/api
+  logdir: c:/logs/
   appname: api
 logging:
   config: classpath:logback-spring.xml
