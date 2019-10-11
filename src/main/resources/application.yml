@@ -36,7 +36,7 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 server:
-  port: 8094
+  port: 8091
   tomcat:
     accesslog:
       buffered: true
