@@ -3,7 +3,7 @@
 api:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://120.92.45.50:3306/mmyx?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://172.15.10.3:3306/mmyx?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
     userName: mmyx_admin
     password: Gkao%2002$1
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -33,7 +33,7 @@ aftersale:
 ###redis 配置
 spring:
   redis:
-    host: 120.92.76.53
+    host: 172.15.10.2
     port: 6379
     password: ihm12345
 
