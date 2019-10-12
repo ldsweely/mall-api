@@ -41,6 +41,7 @@ public class ApiBaseController extends BaseController {
         try {
              object = redisUtil.get(key);
         } catch (Exception e) {
+            log.error("redis连接异常,异常信息={}",e.getMessage());
             e.printStackTrace();
             return "99";
         }
@@ -48,11 +49,19 @@ public class ApiBaseController extends BaseController {
         if (object != null) {
             return object.toString();
         }
-        EnterPriseEntity enterPriseEntity = enterPriseService.selectByAppKey(appKey);
-        if(enterPriseEntity!=null){
-            String v = new StringBuilder().append(enterPriseEntity.getEntId()).append(":").append(enterPriseEntity.getAppSecret()).toString();
-            redisUtil.set(key,v,1800);
-            return v;
+        try {
+            EnterPriseEntity enterPriseEntity = enterPriseService.selectByAppKey(appKey);
+            if (enterPriseEntity != null) {
+                String v = new StringBuilder().append(enterPriseEntity.getEntId()).append(":").append(enterPriseEntity.getAppSecret()).toString();
+                redisUtil.set(key, v, 1800);
+                return v;
+            }
+        }
+        catch (Exception e)
+        {
+            log.error("数据库异常,异常信息={}",e.getMessage());
+            e.printStackTrace();
+            return "99";
         }
 //        Integer intEntId = enterPriseService.getEntIdByAppKey(appKey);
 //        String strAppSecret = enterPriseService.getAppSecretByAppKey(appKey);
