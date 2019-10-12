@@ -33,6 +33,7 @@ public class OrderServiceImpl implements IOrderService {
             strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            log.error("调用下级接口异常,接口={},异常信息={}",url,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
@@ -71,6 +72,7 @@ public class OrderServiceImpl implements IOrderService {
             strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            log.error("调用下级接口异常,接口={},异常信息={}",url,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
@@ -108,6 +110,7 @@ public class OrderServiceImpl implements IOrderService {
             strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            log.error("调用下级接口异常,接口={},异常信息={}",url,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
@@ -145,6 +148,7 @@ public class OrderServiceImpl implements IOrderService {
             strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            log.error("调用下级接口异常,接口={},异常信息={}",url,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
@@ -182,6 +186,7 @@ public class OrderServiceImpl implements IOrderService {
             strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            log.error("调用下级接口异常,接口={},异常信息={}",url,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
@@ -219,6 +224,7 @@ public class OrderServiceImpl implements IOrderService {
             strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            log.error("调用下级接口异常,接口={},异常信息={}",url,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
@@ -256,6 +262,7 @@ public class OrderServiceImpl implements IOrderService {
             strResult = OkHttpUtil.postJson(url,param);
         }
         catch (Exception e){
+            log.error("调用下级接口异常,接口={},异常信息={}",url,e.getMessage());
             return GatApiConstants.HM_SYS_UNKOWN_ERROR.toResult("系统异常");
         }
 
