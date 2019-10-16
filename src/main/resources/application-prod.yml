@@ -16,7 +16,7 @@ api:
 #产品接口URL
 sku:
   server:
-    hostUrl: https://amol.com.cn/product/prod
+    hostUrl: https://amol.com.cn/prod
 #地域接口URL
 addr:
   server:
