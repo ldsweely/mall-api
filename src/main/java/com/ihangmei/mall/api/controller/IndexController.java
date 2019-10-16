@@ -68,8 +68,13 @@ public class IndexController extends ApiBaseController {
         /* 默认公司appkey 0f885924309540105db61266b21d7cbc
                   appsec deab698325704321603fefdfc6b4cfc3
        */
+
+        /* 测试环境配置appKey appSec
         String appKey = "0f885924309540105db61266b21d7cbc";
         String appSec = "deab698325704321603fefdfc6b4cfc3";
+        */
+        String appKey = "e1a61afcf5bf4b995845c7ea504a719c";
+        String appSec = "37339352dfb24b854a80734ccf380e35";
         long timeStamp = System.currentTimeMillis()/1000;
 
         String sign = generateSignature(appKey,appSec,params,String.valueOf(timeStamp));
